@@ -3,7 +3,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaGooglePlay } from "react-icons/fa";
+// import { FaGooglePlay } from "react-icons/fa";
 
 
 
@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer className="  py-4 mt-5">
       <Container>
-        <Row className="d-flex justify-content-center " style={{margin:'10px',width:'100vw'}}>
+        <Row className="d-flex justify-content-center mt-5" style={{margin:'10px',width:'100vw'}}>
           <Col md={3} sm={6} xs={12} style={{ width: "300px", margin: "10px" }}>
             <h5 className="text-danger">E-Commerce</h5>
             <div >
@@ -44,10 +44,12 @@ function Footer() {
             type="playstore"
             placeholder=" Get it on PlayStore"
           aria-label="playstore"
+            
             />
             <input type="app"
             placeholder="Get it on app store"
-            aria-label="app"/>
+            aria-label="app"
+            className="mt-3"/>
             {/* <input type="" */}
           </Col>
         </Row>
