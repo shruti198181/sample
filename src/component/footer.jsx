@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container ,Col, Row } from "react-bootstrap";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
