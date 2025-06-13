@@ -11,7 +11,6 @@ import { FaGooglePlay } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="  py-4 mt-5">
-      <Container>
         <div className="d-flex justify-content-center " style={{margin:'10px',width:'100vw'}}>
           <div style={{ width: "300px", margin: "10px" }}className="col-xs-12 co,-md-3 col-md-6">
             <h5 className="text-danger">E-Commerce</h5>
@@ -45,10 +44,13 @@ function Footer() {
             placeholder=" Get it on PlayStore"
           aria-label="playstore"
             />
+            <input type="app"
+            placeholder="Get it on app store"
+            aria-label="app"/>
             {/* <input type="" */}
           </div>
         </div>
-      </Container>
+    
     </footer>
   );
 };
