@@ -144,8 +144,7 @@ function MyNavbar() {
                     <Nav.Link as={NavLink} to="/service">Service</Nav.Link>
                      <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
                      </Nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
+              
             {/* Icons */}
      <Form className="me-5 d-flex">
                             <FormControl 
@@ -160,7 +159,10 @@ function MyNavbar() {
                         </Nav.Link>
                                <Button variant="outline-primary" as={NavLink} to="/login">
                               <FaUser className="me-1" /> Login
-                             </Button>                   </div>
+                             </Button>               
+                                 </div>
+                                 </Offcanvas.Body>
+            </Navbar.Offcanvas>
           </Container>
         </Navbar>
       </div>
