@@ -16,11 +16,11 @@ function Data() {
           <Col key={item.id} xs={12} sm={6} md={4} lg={3}> 
             <div className='card'
               style={{ 
-                border: '1px solid #ddd',
+                border: '1px solid grey',
                 borderRadius: '10px',
                 padding: '10px',
                 height: '100%',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.5)',
+                // boxShadow: '0 2px 6px rgba(0,0,0,0.5)',
                 backgroundColor: '#fff',
               }}
             >
