@@ -1,11 +1,11 @@
-// import LoginForm from "../component/form";
+import LoginForm from "../component/form";
 
-// function Login() {
+function Login() {
 
-//     return(
-//         <>
-//         <LoginForm/>
-//         </>
-//     )
-// }
-// export default Login;
+    return(
+        <>
+        <LoginForm/>
+        </>
+    )
+}
+export default Login;
