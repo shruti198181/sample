@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import './style.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { AddToCart } from './cartslice';
+import { AddToCart, increase,descrease } from './cartslice';
 
 function Data() {
   const [product, setProduct] = useState([]);
   const dispatch = useDispatch(); 
-
+  const cartItems = useSelector(state=>state.cart.cartItems)
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
@@ -19,6 +19,7 @@ function Data() {
     <Container className="my-4"> 
       <Row className="gx-4 gy-4"> 
         {product.map((item) => (
+          
           <Col key={item.id} xs={12} sm={6} md={4} lg={3}> 
             <div className='card'
               style={{ 
@@ -45,8 +46,22 @@ function Data() {
               
               <p> <span className='text-warning'>Rate: </span>{item.rating.rate}</p>
               <p> <span className='text-warning'>Count: </span>{item.rating.count}</p></div>
-              <div className='text-center'>              <Button onClick={()=> dispatch(AddToCart(item))} className='w-50'>Add To Cart</Button>
+                    <div className='text-center'>
+  {(() => {
+    const cartItem = cartItems.find(cart => cart.id === item.id);
+    return cartItem ? (
+      <div className='d-flex justify-content-center align-items-center'>
+        <Button  onClick={() => dispatch(descrease(item.id))}>-</Button>
+        <span className='mx-3'>{cartItem.quantity}</span>
+        <Button onClick={() => dispatch(increase(item.id))}>+</Button>
+      </div>
+    ) : (
+      <Button onClick={() => dispatch(AddToCart(item))} className='w-50'>Add To Cart</Button>
+    );
+  })()}
 </div>
+
+
   
 
             </div>
