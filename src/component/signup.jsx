@@ -91,7 +91,7 @@ function Signup() {
     </label>
  <ErrorMessage name="terms" component="div" className='text-danger' />
                             <div className='text-center'>     
-                            <Button type="submit" className='mt-2' onClick={handleSubmit}>Submit</Button>
+                            <Button type="submit" className='mt-2 mb-2' onClick={handleSubmit}>Submit</Button>
                           </div>
                         </Form>
                     </Formik>
