@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col,Button } from 'react-bootstrap';
 import './style.css';
+import {useCart} from './cart'
 function Data() {
   const [product, setProduct] = useState([]);
+    const { dispatch } = useCart(); // ✅ add this line
+
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
@@ -36,6 +39,15 @@ function Data() {
               </div>
               <h6 className="mt-2">{item.title}</h6>
               <p className="text-success fw-bold text-center"><span className='text-warning'>Price:</span>${item.price}</p>
+              <div className='text-center'>          <Button
+  onClick={() => dispatch({ type: 'Add To Cart', payload: item })}
+  className="btn btn-primary mt-2 w-50"
+>
+  Add to Cart
+</Button>
+</div>
+
+
             </div>
           </Col>
         ))}

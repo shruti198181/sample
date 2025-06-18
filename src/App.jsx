@@ -4,10 +4,11 @@ import Home from './pages/home';
  import Login from './pages/login';
 import withLayout from './component/layout';
 import Signup from './component/signup';
+import CartPage from './pages/cartpage';
 
 const HomeWithLayout = withLayout(Home);
  const LoginWithLayout = withLayout(Login, { hideOnPaths: ['/login'] });
-   const SignupWithLayout = withLayout(Signup,{hideOnPaths:['.signup']});
+   const SignupWithLayout = withLayout(Signup,{hideOnPaths:['/signup']});
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/home" element={<HomeWithLayout />} /> {/* Added */}
       <Route path="/login" element={<LoginWithLayout />} />
       <Route path="/signup" element={<SignupWithLayout/>}/>
+      <Route path="/cartpage" element={<CartPage/>}/>
     </Routes>
   );
 }

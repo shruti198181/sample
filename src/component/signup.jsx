@@ -12,6 +12,10 @@ const validationSchema = Yup.object({
     Password: Yup.string().min("at least 6 character in password").required("Password is required"),
     confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
         .required('Confirm Password is required'),
+          terms: Yup.boolean()
+    .oneOf([true], 'You must accept the Terms and Conditions')
+    .required('You must accept the Terms and Conditions'),
+
 })
 
 function Signup() {
@@ -22,7 +26,8 @@ function Signup() {
          gender:'',
         BirthDate: '',
         password: '',
-        confirmPassword: ""
+        confirmPassword: "",
+        terms:''
     }
     const navigate = useNavigate()
     const handleSubmit = (values) => {
@@ -80,6 +85,11 @@ function Signup() {
                                 <Field name="confirmPassword" type="password" className="form-control "/>
                                 <ErrorMessage name="confirmPassword" component="div" className='text-danger' />
                             </div>
+                                <label>
+      <Field type="checkbox" name="terms" />
+      I agree to the Terms and Conditions
+    </label>
+ <ErrorMessage name="terms" component="div" className='text-danger' />
                             <div className='text-center'>     
                             <Button type="submit" className='mt-2' onClick={handleSubmit}>Submit</Button>
                           </div>

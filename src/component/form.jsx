@@ -20,24 +20,25 @@ function LoginForm () {
         <>
         <div className="d-flex align-items-center justify-content-center mt-5">
 
-        <div style={{border:'1px solid blue', width:'300px' ,textAlign:'center',backgroundColor:'whitesmoke',justifyContent:'center'}}>
-            <h2 className='text-primary'>Login Form</h2>
+        <div style={{border:'1px solid blue', width:'300px' ,backgroundColor:'whitesmoke',justifyContent:'center'}}>
+            <h2 className='text-primary text-center'>Login Form</h2>
             <Formik initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}>
                     <Form className='text-warning'>
-                       <div className='mt-2 '><label>Email:</label>
-                         <Field name="email" type="email" className="ms-4"/>
+                       <div className='mt-2 ms-2'><label>Email:</label>
+                         <Field name="email" type="email" className=" form-control"/>
                           <ErrorMessage style={{color:'red'}} component="div" name="email"/>
                         </div>
-                        <div className='mt-2'>
+                        <div className='mt-2 ms-2'>
                             <label>Password:</label>
-                            <Field name="password" type="password"className="ms-2"/>
+                            <Field name="password" type="password"className="form-control"/>
                              <ErrorMessage style={{color:'red'}} component="div" name="password"/>
                         </div>
-                    
-                    <Button type="submit">Submit</Button>
-                    <div>Don't have any account? plz create <NavLink as to="/signup">signupform</NavLink></div>
+                        
+                    <div className='text-center mt-2'>
+                    <Button type="submit">Submit</Button></div>
+                    <div className='text-center'>Don't have any account?  <NavLink  to="/signup">Create an account</NavLink></div>
                     </Form>
                 </Formik>
         </div>
