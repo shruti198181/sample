@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import './style.css';
-import {useCart} from './cart'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { AddToCart } from './cartslice';
+
 function Data() {
   const [product, setProduct] = useState([]);
-    const { dispatch } = useCart(); // ✅ add this line
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -37,16 +40,14 @@ function Data() {
               </figure>
 
               </div>
-              <h6 className="mt-2">{item.title}</h6>
-              <p className="text-success fw-bold text-center"><span className='text-warning'>Price:</span>${item.price}</p>
-              <div className='text-center'>          <Button
-  onClick={() => dispatch({ type: 'Add To Cart', payload: item })}
-  className="btn btn-primary mt-2 w-50"
->
-  Add to Cart
-</Button>
+              <h6 className="mt-2 text-center">{item.title}</h6>
+              <div className="text-success fw-bold text-center"><p><span className='text-warning'>Price:</span>${item.price}</p>
+              
+              <p> <span className='text-warning'>Rate: </span>{item.rating.rate}</p>
+              <p> <span className='text-warning'>Count: </span>{item.rating.count}</p></div>
+              <div className='text-center'>              <Button onClick={()=> dispatch(AddToCart(item))} className='w-50'>Add To Cart</Button>
 </div>
-
+  
 
             </div>
           </Col>

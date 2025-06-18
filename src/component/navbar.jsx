@@ -154,7 +154,7 @@ function MyNavbar() {
                            className="me-2"/>
                           </Form>
                        <div className="d-flex ">
-                     <Nav.Link as={NavLink} to="/cart" className="me-3">
+                     <Nav.Link as={NavLink} to="/cartpage" className="me-3">
                      <FaShoppingBag size={20} />
                         </Nav.Link>
                                <Button variant="outline-primary" as={NavLink} to="/login">
