@@ -28,8 +28,8 @@ function MyNavbar() {
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end" >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+              <Offcanvas.Header closeButton className='text-light'>
+                <Offcanvas.Title id="offcanvasNavbarLabel" className='text-light'>Menu</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>              
                   <Nav className="me-auto ms-5 col-md-8">
