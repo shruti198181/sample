@@ -51,7 +51,7 @@ function MyNavbar() {
                            />
                           </Form>
                        <div className="d-flex ">
-              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-sm-3">
+              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-sm-5">
   <FaShoppingBag size={24}style={{color:'#ffffff'}} />
   {cartItems.length > 0 && (
     <span
@@ -63,7 +63,7 @@ function MyNavbar() {
   )}
 </Nav.Link>
 
-                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}} className='mt-sm-3'>
+                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}} className='mt-sm-5'>
                               <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
                              </Button>               
                                  </div>
