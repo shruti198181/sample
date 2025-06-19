@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col,Button } from 'react-bootstrap';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { AddToCart, increase,descrease } from './cartslice';
+import { AddToCart, increase,decrease } from './cartslice';
 
 function Data() {
   const [product, setProduct] = useState([]);
@@ -51,7 +50,7 @@ function Data() {
     const cartItem = cartItems.find(cart => cart.id === item.id);
     return cartItem ? (
       <div className='d-flex justify-content-center align-items-center'>
-        <Button  onClick={() => dispatch(descrease(item.id))}>-</Button>
+        <Button  onClick={() => dispatch(decrease(item.id))}>-</Button>
         <span className='mx-3'>{cartItem.quantity}</span>
         <Button onClick={() => dispatch(increase(item.id))}>+</Button>
       </div>

@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from "react-redux"
-import { RemoveFromCart, ClearCart } from "../component/cartslice"
+import { RemoveFromCart, ClearCart,increase,decrease } from "../component/cartslice"
 import {Button,Row,Col,Container,Card} from 'react-bootstrap';
 const CartPage = ()  => {
    const dispatch = useDispatch()
    const cartItems = useSelector(state=>state.cart.cartItems)
-   const totalAmount = cartItems.reduce((sum,item)=>sum+item.price,0).toFixed(2) 
+   const totalAmount = cartItems.reduce((sum,item)=>sum+item.price * item.quantity,0).toFixed(2) 
    return(
         <Container>
       <div className="text-center my-4">
-        <h3>Your Cart</h3>
+        <h3 style={{color:'green'}}>Your Cart</h3>
 
         {cartItems.length === 0 ? (
-          <p>Your Cart is Empty</p>
+          <p style={{color:'tomato'}}>Your Cart is Empty</p>
         ) : (
           <>
             <Row className="gy-4">
@@ -37,16 +37,34 @@ const CartPage = ()  => {
                           WebkitBoxOrient: "vertical",
                         }}
                       >
-                        {item.title}
+                        <p><span className="text-sucess">Price:</span> {item.title}</p>
                       </Card.Title>
                       <Card.Text className="text-success fw-bold">
-                        ${item.price}
+                    <p> <span className="text-success">Price:</span>   ${item.price}</p>
                       </Card.Text>
+                      <div className="d-flex justify-content-center align-items-center gap-2">
+  <Button
+    variant="primary"
+    size="sm"
+    onClick={() => dispatch(decrease(item.id))}
+  >
+    -
+  </Button>
+  <span>{item.quantity}</span>
+  <Button
+    variant="primary"
+    size="sm"
+    onClick={() => dispatch(increase(item.id))}
+  >
+    +
+  </Button>
+</div>
+                      
                       <div className="mt-auto text-center">
                         <Button
                           variant="primary"
                           onClick={() => dispatch(RemoveFromCart(item.id))}
-                          className="w-50">
+                          className="w-50 mt-2">
                           Remove
                         </Button>
                       </div>
@@ -69,9 +87,6 @@ const CartPage = ()  => {
         )}
       </div>
     </Container>
-
    );
-
 };
-
 export default CartPage;

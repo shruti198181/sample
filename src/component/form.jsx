@@ -21,7 +21,7 @@ function LoginForm () {
         <div className="d-flex align-items-center justify-content-center mt-5">
 
         <div style={{border:'1px solid blue', width:'300px' ,backgroundColor:'whitesmoke',justifyContent:'center'}}>
-            <h2 className='text-primary text-center'>Login Form</h2>
+            <h2 className='text-primary text-center'>Login</h2>
             <Formik initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}>
