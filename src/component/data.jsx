@@ -22,7 +22,7 @@ function Data() {
 
   }, []);
   return (
-    <div style={{backgroundColor:'#e3f2fd		' }} className="pb-3">
+    <div style={{backgroundColor:'#e3f2fd		' }} className="pb-3 pt-3">
     <Container className=""> 
       <Row className="gx-4 gy-4"> 
         {filteredProducts.map((item) => (
