@@ -40,7 +40,7 @@ function MyNavbar() {
                      </Nav>
               
             {/* Icons */}
-     <Form className="me-5 d-flex  mt-5"
+     <Form className="me-5 d-flex  h-25 mt-5"
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
@@ -51,7 +51,7 @@ function MyNavbar() {
                            />
                           </Form>
                        <div className="d-flex ">
-              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-sm-5">
+              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-xs-5">
   <FaShoppingBag size={24}style={{color:'#ffffff'}} />
   {cartItems.length > 0 && (
     <span
@@ -63,7 +63,7 @@ function MyNavbar() {
   )}
 </Nav.Link>
 
-                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}} className='mt-sm-5'>
+                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}} className='mt-xs-5'>
                               <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
                              </Button>               
                                  </div>
