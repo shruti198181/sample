@@ -8,17 +8,24 @@ function Data() {
   const [product, setProduct] = useState([]);
   const dispatch = useDispatch(); 
   const cartItems = useSelector(state=>state.cart.cartItems)
+  const searchTerm = useSelector((state) => state.search.term);
+  const filteredProducts = product.filter((product) =>
+  product.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error('Error fetching products:', error));
+      console.log('Search:', searchTerm);
+
   }, []);
   return (
-    <div style={{backgroundColor:'#e3f2fd		'}}>
+    <div style={{backgroundColor:'#e3f2fd		' }} className="pb-3">
     <Container className=""> 
       <Row className="gx-4 gy-4"> 
-        {product.map((item) => (
+        {filteredProducts.map((item) => (
           
           <Col key={item.id} xs={12} sm={6} md={4} lg={3}> 
             <div className='card'

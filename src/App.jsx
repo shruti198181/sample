@@ -9,7 +9,8 @@ import CartPage from './pages/cartpage';
 const HomeWithLayout = withLayout(Home);
  const LoginWithLayout = withLayout(Login, { hideOnPaths: ['/login'] });
    const SignupWithLayout = withLayout(Signup,{hideOnPaths:['/signup']});
-
+const CartPageWithLayout =withLayout(CartPage,{hideOnPaths: ['/cartpage']})
+ 
 function App() {
   return (
     <Routes>
@@ -17,7 +18,7 @@ function App() {
             <Route path="/home" element={<HomeWithLayout />} /> {/* Added */}
       <Route path="/login" element={<LoginWithLayout />} />
       <Route path="/signup" element={<SignupWithLayout/>}/>
-      <Route path="/cartpage" element={<CartPage/>}/>
+      <Route path="/cartpage" element={<CartPageWithLayout/>}/>
     </Routes>
   );
 }

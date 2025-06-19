@@ -3,9 +3,13 @@ import { Navbar, Container, Nav, Form,FormControl,Offcanvas,Button } from 'react
 import { Link ,NavLink} from 'react-router-dom';
 import { FaShoppingBag} from 'react-icons/fa';
 import {FaUser } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setSearchTerm } from './searchslice'; 
+
 function MyNavbar() {
     const cartItems = useSelector((state) => state.cart.cartItems);
+      const dispatch = useDispatch();
+
   return (
     <>
       <div style={{   backgroundColor:'#3949AB', width: '100vw'}}>
@@ -19,7 +23,7 @@ function MyNavbar() {
               />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
-            <Navbar.Offcanvas
+            <Navbar.Offcanvas style={{backgroundColor:'#3949AB'}}
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end" >
@@ -35,12 +39,15 @@ function MyNavbar() {
                      </Nav>
               
             {/* Icons */}
-     <Form className="me-5 d-flex">
+     <Form className="me-5 d-flex"
+       onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
                             placeholder="Search"
                             aria-label="Search"
-                           className="me-2"/>
+                           className="me-2"
+                               onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+                           />
                           </Form>
                        <div className="d-flex ">
               <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative">

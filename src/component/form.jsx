@@ -18,7 +18,7 @@ function LoginForm () {
 
     return(
         <>
-        <div className="d-flex align-items-center justify-content-center mt-5">
+        <div className="d-flex align-items-center justify-content-center pt-5 pb-3"style={{backgroundColor:'#e3f2fd'}}>
 
         <div style={{border:'1px solid blue', width:'300px' ,backgroundColor:'whitesmoke',justifyContent:'center'}}>
             <h2 className='text-primary text-center'>Login</h2>

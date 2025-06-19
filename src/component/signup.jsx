@@ -36,7 +36,7 @@ function Signup() {
     }
     return (
         <>
-            <div className="d-flex align-items-center justify-content-center mt-5">
+            <div className="d-flex align-items-center justify-content-center pt-5 pb-3 "style={{backgroundColor:'#e3f2fd'}}>
 
                 <div style={{ border: '1px solid blue', width: '400px', textAlign: 'left', backgroundColor: '#edf8fd', justifyContent: 'center' }} className='ps-3'>
                     <h2 className='text-primary text-center'>Signin</h2>
