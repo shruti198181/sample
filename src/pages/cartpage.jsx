@@ -8,6 +8,8 @@ const CartPage = ()  => {
    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
    return(
+    <div style={{backgroundColor:'#e3f2fd		'}}>
+
         <Container>
       <div className="text-center my-4">
         <h3 style={{color:'green'}}>Your Cart</h3>
@@ -61,8 +63,7 @@ const CartPage = ()  => {
     +
   </Button>
 </div>
-                    
-                      <div className="mt-auto text-center">
+                <div className="mt-auto text-center" >
                         <Button
                           variant="primary"
                           onClick={() => dispatch(RemoveFromCart(item.id))}
@@ -90,6 +91,7 @@ const CartPage = ()  => {
         )}
       </div>
     </Container>
+    </div>
    );
 };
 export default CartPage;
