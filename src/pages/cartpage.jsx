@@ -8,10 +8,10 @@ const CartPage = ()  => {
    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
    return(
-    <div style={{backgroundColor:'#e3f2fd		'}}>
+    <div style={{backgroundColor:'#e3f2fd',height:'100vh'}}>
 
         <Container>
-      <div className="text-center my-4">
+      <div className="text-center py-4">
         <h3 style={{color:'green'}}>Your Cart</h3>
 
         {cartItems.length === 0 ? (
