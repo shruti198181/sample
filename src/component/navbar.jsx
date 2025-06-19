@@ -40,13 +40,13 @@ function MyNavbar() {
                      </Nav>
               
             {/* Icons */}
-     <Form className="me-5 d-flex  h-25 mt-5"
+     <Form className="me-5 d-flex  mt-5"
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
                             placeholder="Search"
                             aria-label="Search"
-                          
+                            
                                onChange={(e) => dispatch(setSearchTerm(e.target.value))}
                            />
                           </Form>
