@@ -32,7 +32,7 @@ function MyNavbar() {
                 <Offcanvas.Title id="offcanvasNavbarLabel" className='text-light'>Menu</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>              
-                  <Nav className="me-auto ms-5 col-md-8">
+                  <Nav className="me-auto ms-5 col-md-8 mt-5 ">
                   <Nav.Link as={NavLink} to="/home" style={{color:'#ffffff'}}>Home</Nav.Link>
                    <Nav.Link as={NavLink} to="/about" style={{color:'#ffffff'}}>About</Nav.Link>
                     <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
@@ -40,13 +40,13 @@ function MyNavbar() {
                      </Nav>
               
             {/* Icons */}
-     <Form className="me-5 d-flex"
+     <Form className="me-5 d-flex  mt-5"
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
                             placeholder="Search"
                             aria-label="Search"
-                           className="me-2"
+                          
                                onChange={(e) => dispatch(setSearchTerm(e.target.value))}
                            />
                           </Form>
