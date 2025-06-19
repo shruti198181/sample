@@ -7,7 +7,7 @@ import LinkedinIcon from '../icons/linked';
 function Footer () {
   return (
     <>
-    <div style={{backgroundColor: '#FAF0E6'}}>
+    <div style={{backgroundColor: '#3949AB',color:'#ffffff'}}>
             <footer className="py-4 pt-5">
         <div style={{padding:'0px 50px'}}>
            <Container>

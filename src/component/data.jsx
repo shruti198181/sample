@@ -16,7 +16,7 @@ function Data() {
   }, []);
   return (
     <div style={{backgroundColor:'#e3f2fd		'}}>
-    <Container className="pb-4"> 
+    <Container className=""> 
       <Row className="gx-4 gy-4"> 
         {product.map((item) => (
           

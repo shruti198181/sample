@@ -8,8 +8,8 @@ function MyNavbar() {
     const cartItems = useSelector((state) => state.cart.cartItems);
   return (
     <>
-      <div style={{   backgroundColor:'#FAF0E6	', width: '100vw'}}>
-        <Navbar expand="lg" style={{ height: '130px', width: '100%' }}>
+      <div style={{   backgroundColor:'#3949AB', width: '100vw'}}>
+        <Navbar expand="lg" style={{ height: '130px',color:'#ffffff', width: '100%' }}>
           <Container>
             <Navbar.Brand  as={Link} to="/home" style={{ display: 'flex', alignItems: 'center' }}>
               <img
@@ -28,10 +28,10 @@ function MyNavbar() {
               </Offcanvas.Header>
               <Offcanvas.Body>              
                   <Nav className="me-auto ms-5 col-md-8">
-                  <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
-                   <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-                    <Nav.Link as={NavLink} to="/service">Service</Nav.Link>
-                     <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+                  <Nav.Link as={NavLink} to="/home" style={{color:'#ffffff'}}>Home</Nav.Link>
+                   <Nav.Link as={NavLink} to="/about" style={{color:'#ffffff'}}>About</Nav.Link>
+                    <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
+                     <Nav.Link as={NavLink} to="/contact" style={{color:'#ffffff'}}>Contact</Nav.Link>
                      </Nav>
               
             {/* Icons */}
@@ -44,7 +44,7 @@ function MyNavbar() {
                           </Form>
                        <div className="d-flex ">
               <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative">
-  <FaShoppingBag size={24} />
+  <FaShoppingBag size={24}style={{color:'#ffffff'}} />
   {cartItems.length > 0 && (
     <span
       className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
@@ -55,8 +55,8 @@ function MyNavbar() {
   )}
 </Nav.Link>
 
-                               <Button variant="outline-primary" as={NavLink} to="/login">
-                              <FaUser className="me-1" /> Login
+                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}}>
+                              <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
                              </Button>               
                                  </div>
                                  </Offcanvas.Body>
