@@ -15,7 +15,8 @@ function Data() {
       .catch((error) => console.error('Error fetching products:', error));
   }, []);
   return (
-    <Container className="my-4"> 
+    <div style={{backgroundColor:'#e3f2fd		'}}>
+    <Container className="pb-4"> 
       <Row className="gx-4 gy-4"> 
         {product.map((item) => (
           
@@ -68,6 +69,7 @@ function Data() {
         ))}
       </Row>
     </Container>
+    </div>
   );
 }
 

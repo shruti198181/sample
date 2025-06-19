@@ -196,7 +196,8 @@ function Footer () {
 
   return (
     <>
-      <footer className="py-4 mt-5">
+    <div style={{backgroundColor: '#FFF3E0'}}>
+            <footer className="py-4 pt-5">
         <div style={{padding:'0px 50px'}}>
            <Container>
             <div style={{display:'flex',
@@ -246,6 +247,8 @@ function Footer () {
            </Container>
         </div>
       </footer>
+      </div>
+
     </>
   )
 }

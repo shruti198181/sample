@@ -5,6 +5,8 @@ const CartPage = ()  => {
    const dispatch = useDispatch()
    const cartItems = useSelector(state=>state.cart.cartItems)
    const totalAmount = cartItems.reduce((sum,item)=>sum+item.price * item.quantity,0).toFixed(2) 
+   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
    return(
         <Container>
       <div className="text-center my-4">
@@ -59,7 +61,7 @@ const CartPage = ()  => {
     +
   </Button>
 </div>
-                      
+                    
                       <div className="mt-auto text-center">
                         <Button
                           variant="primary"
@@ -73,6 +75,7 @@ const CartPage = ()  => {
                 </Col>
               ))}
             </Row>
+            <p><span className="text-success">Total Quantity:</span> {totalQuantity}</p>
           <p><span className="text-danger">Total Amount :</span>${totalAmount}</p>
             <div className="text-center mt-4">
               <Button
