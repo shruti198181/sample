@@ -1,16 +1,20 @@
-import { useLocation } from "react-router-dom"
+// import { useLocation } from "react-router-dom"
+import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 function PlaceOrder () {
-      const location = useLocation();
-  const { cartItems = [], totalQuantity = 0, totalAmount = 0 } = location.state || {};
+    
+const cartItems = useSelector((state) => state.cart.cartItems);
+const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
+//       const location = useLocation();
+//   const { cartItems = [], totalQuantity = 0, totalAmount = 0 } = location.state || {};
     const orderId = `ORD-${Math.floor(Math.random()*100000)}`;
-   
      const currentDate = new Date();
      const deliveryDate =  new Date(currentDate.setDate(currentDate.getDate() + 5)).toDateString();
     return(
         <>
-        <div style={{backgroundColor:'#e3f2fd',height:'80vh' }}>        <Container>
+        <div style={{backgroundColor:'#e3f2fd',height:'100vh' }}>        <Container>
             <div className="text-center pt-5">
       <h2 className="text-success mt-5">Thank You</h2>
       <h2 className="mt-3 text-success"> Your Order has been placed successfully!</h2>
@@ -33,8 +37,6 @@ function PlaceOrder () {
                                 <td>${item.price.toFixed(2)}</td>
                                 <td>${(item.price * item.quantity).toFixed(2)}</td>
                             </tr>
-                                    
-
                         ))}
                         <tr>
                             <td colSpan="1">Total</td>
@@ -56,4 +58,4 @@ function PlaceOrder () {
     )
 }
 
-export default PlaceOrder
+export default PlaceOrder;

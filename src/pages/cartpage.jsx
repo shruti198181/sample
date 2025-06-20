@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { RemoveFromCart, ClearCart,increase,decrease } from "../component/cartslice"
-import {Button,Row,Col,Container,Card, NavLink} from 'react-bootstrap';
+import {Button,Row,Col,Container,Card} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 const CartPage = ()  => {
    const dispatch = useDispatch()
@@ -11,15 +11,16 @@ const CartPage = ()  => {
    const handlePlaceorder = () => {
         // alert("Order placed successfully!");
     
-    navigate("/porder",{
-    state: {
-      cartItems,
-      totalQuantity,
-      totalAmount,
-    }
-  });
+    navigate("/porder")
+      // ,{
+  //   state: {
+  //     cartItems,
+  //     totalQuantity,
+  //     totalAmount,
+  //   }
+  // });
   
-dispatch(ClearCart());
+//  dispatch(ClearCart());
    }
    return(
     <div style={{backgroundColor:'#e3f2fd',height:'100vh'}}>
