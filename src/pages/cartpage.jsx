@@ -1,12 +1,26 @@
 import { useDispatch, useSelector } from "react-redux"
 import { RemoveFromCart, ClearCart,increase,decrease } from "../component/cartslice"
-import {Button,Row,Col,Container,Card} from 'react-bootstrap';
+import {Button,Row,Col,Container,Card, NavLink} from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 const CartPage = ()  => {
    const dispatch = useDispatch()
    const cartItems = useSelector(state=>state.cart.cartItems)
    const totalAmount = cartItems.reduce((sum,item)=>sum+item.price * item.quantity,0).toFixed(2) 
    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-
+    const navigate = useNavigate();    
+   const handlePlaceorder = () => {
+        // alert("Order placed successfully!");
+    
+    navigate("/porder",{
+    state: {
+      cartItems,
+      totalQuantity,
+      totalAmount,
+    }
+  });
+  
+dispatch(ClearCart());
+   }
    return(
     <div style={{backgroundColor:'#e3f2fd',height:'100vh'}}>
 
@@ -41,7 +55,7 @@ const CartPage = ()  => {
                           WebkitBoxOrient: "vertical",
                         }}
                       >
-                        <p><span className="text-sucess">Price:</span> {item.title}</p>
+                        <p><span className="text-sucess">Title:</span> {item.title}</p>
                       </Card.Title>
                       <Card.Text className="text-success fw-bold">
                     <p> <span className="text-success">Price:</span>   ${item.price}</p>
@@ -78,6 +92,7 @@ const CartPage = ()  => {
             </Row>
             <p><span className="text-success">Total Quantity:</span> {totalQuantity}</p>
           <p><span className="text-danger">Total Amount :</span>${totalAmount}</p>
+                   <Button variant="success" onClick={handlePlaceorder}>Place Order</Button>
             <div className="text-center mt-4">
               <Button
                 variant="danger"

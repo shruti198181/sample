@@ -23,9 +23,9 @@ function MyNavbar() {
                 style={{ height: '80px', objectFit: 'contain' }}
               />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="offcanvasNavbar" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Offcanvas style={{backgroundColor:'#3949AB'}}
-              id="offcanvasNavbar"
+              id="basic-navbar-nav"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end" >
               <Offcanvas.Header closeButton className='text-light'>
@@ -38,11 +38,10 @@ function MyNavbar() {
                     <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
                      <Nav.Link as={NavLink} to="/contact" style={{color:'#ffffff'}}>Contact</Nav.Link>
                      </Nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
+              
             {/* Icons */}
-            <div className="d-flex align-items-center gap-2 ms-auto flex-wrap">
-
+          <div className="d-flex flex-column flex-md-row align-items-center gap-2 mt-3 w-100">
+  
      <Form className="me-5 d-flex  "
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
@@ -71,10 +70,12 @@ function MyNavbar() {
                              </Button>               
                                  </div>
                                  </div>
-                                 
+                                 </Offcanvas.Body>
+            </Navbar.Offcanvas>
           </Container>
         </Navbar>
       </div>
+      
     </>
   );
 }
