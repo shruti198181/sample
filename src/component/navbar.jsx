@@ -38,15 +38,18 @@ function MyNavbar() {
                     <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
                      <Nav.Link as={NavLink} to="/contact" style={{color:'#ffffff'}}>Contact</Nav.Link>
                      </Nav>
+                     </Offcanvas.Body>
+            </Navbar.Offcanvas>
+
               
             {/* Icons */}
-     <Form className="me-5 d-flex  mt-5"
+     <Form className="me-5 d-flex  "
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
                             placeholder="Search"
                             aria-label="Search"
-                            
+                            style={{width:'250px',height:'50px'}}
                                onChange={(e) => dispatch(setSearchTerm(e.target.value))}
                            />
                           </Form>
@@ -63,13 +66,11 @@ function MyNavbar() {
   )}
 </Nav.Link>
 
-                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff'}} className='mt-xs-5'>
+                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff',width:'100px',height:'50px'}} className='mt-xs-5 '>
                               <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
                              </Button>               
                                  </div>
-                                 </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
+                                           </Container>
         </Navbar>
       </div>
     </>
