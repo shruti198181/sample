@@ -38,12 +38,12 @@ function MyNavbar() {
                     <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
                      <Nav.Link as={NavLink} to="/contact" style={{color:'#ffffff'}}>Contact</Nav.Link>
                      </Nav>
-                     </Offcanvas.Body>
+              </Offcanvas.Body>
             </Navbar.Offcanvas>
-
-              
             {/* Icons */}
-     <Form className="me-5 d-flex  justify-content-xs-center"
+            <div className="d-flex align-items-center gap-2 ms-auto flex-wrap">
+
+     <Form className="me-5 d-flex  "
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
@@ -54,7 +54,7 @@ function MyNavbar() {
                            />
                           </Form>
                        <div className="d-flex ">
-              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative">
+              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-xs-5">
   <FaShoppingBag size={24}style={{color:'#ffffff'}} />
   {cartItems.length > 0 && (
     <span
@@ -70,7 +70,9 @@ function MyNavbar() {
                               <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
                              </Button>               
                                  </div>
-                                           </Container>
+                                 </div>
+                                 
+          </Container>
         </Navbar>
       </div>
     </>
