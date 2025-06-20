@@ -43,7 +43,7 @@ function MyNavbar() {
 
               
             {/* Icons */}
-     <Form className="me-5 d-flex  "
+     <Form className="me-5 d-flex  justify-content-xs-center"
        onSubmit={(e) => e.preventDefault()}>
                             <FormControl 
                            type="search"
