@@ -23,59 +23,63 @@ function MyNavbar() {
                 style={{ height: '80px', objectFit: 'contain' }}
               />
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas style={{backgroundColor:'#3949AB'}}
-              id="basic-navbar-nav"
+              id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end" >
               <Offcanvas.Header closeButton className='text-light'>
                 <Offcanvas.Title id="offcanvasNavbarLabel" className='text-light'>Menu</Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>              
-                  <Nav className="me-auto ms-5 col-md-8 mt-5 ">
-                  <Nav.Link as={NavLink} to="/home" style={{color:'#ffffff'}}>Home</Nav.Link>
-                   <Nav.Link as={NavLink} to="/about" style={{color:'#ffffff'}}>About</Nav.Link>
-                    <Nav.Link as={NavLink} to="/service" style={{color:'#ffffff'}}>Service</Nav.Link>
-                     <Nav.Link as={NavLink} to="/contact" style={{color:'#ffffff'}}>Contact</Nav.Link>
-                     </Nav>
-              
-            {/* Icons */}
-          <div className="d-flex flex-column flex-md-row align-items-center gap-2 mt-3 w-100">
-  
-     <Form className="me-5 d-flex  "
-       onSubmit={(e) => e.preventDefault()}>
-                            <FormControl 
-                           type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                            style={{width:'250px',height:'50px'}}
-                               onChange={(e) => dispatch(setSearchTerm(e.target.value))}
-                           />
-                          </Form>
-                       <div className="d-flex ">
-              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-xs-5">
-  <FaShoppingBag size={24}style={{color:'#ffffff'}} />
-  {cartItems.length > 0 && (
-    <span
-      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-      style={{ fontSize: '0.6rem' }}
-    >
-      {cartItems.reduce((total, item) => total + item.quantity, 0)}
-    </span>
-  )}
-</Nav.Link>
+              <Offcanvas.Body>
+  <div className="d-flex flex-column flex-lg-row align-items-center justify-content-between w-100 gap-3">
 
-                               <Button variant="outline-primary" as={NavLink} to="/login" style={{color:'#ffffff',width:'100px',height:'50px'}} className='mt-xs-5 '>
-                              <FaUser className="me-1" style={{color:'#ffffff'}} /> Login
-                             </Button>               
-                                 </div>
-                                 </div>
-                                 </Offcanvas.Body>
+    {/* Nav links */}
+    <Nav className="flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
+  <Nav.Link as={NavLink} to="/home" style={{ color: '#ffffff' }}>Home</Nav.Link>
+  <Nav.Link as={NavLink} to="/about" style={{ color: '#ffffff' }}>About</Nav.Link>
+  <Nav.Link as={NavLink} to="/service" style={{ color: '#ffffff' }}>Service</Nav.Link>
+  <Nav.Link as={NavLink} to="/contact" style={{ color: '#ffffff' }}>Contact</Nav.Link>
+</Nav>
+
+
+    {/* Search */}
+    <Form className="flex-grow-1" onSubmit={(e) => e.preventDefault()}>
+      <FormControl
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        className="mx-auto"
+        style={{ maxWidth: "300px" }}
+        onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+      />
+    </Form>
+
+    {/* Icons */}
+    <div className="d-flex align-items-center gap-3">
+      <Nav.Link as={NavLink} to="/cartpage" className="position-relative">
+        <FaShoppingBag size={24} style={{ color: '#ffffff' }} />
+        {cartItems.length > 0 && (
+          <span
+            className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+            style={{ fontSize: '0.6rem' }}
+          >
+            {cartItems.reduce((total, item) => total + item.quantity, 0)}
+          </span>
+        )}
+      </Nav.Link>
+      <Button variant="outline-primary" as={NavLink} to="/login" style={{ color: '#ffffff' }}>
+        <FaUser className="me-1" style={{ color: '#ffffff' }} /> Login
+      </Button>
+    </div>
+
+  </div>
+</Offcanvas.Body>
+
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       </div>
-      
     </>
   );
 }
