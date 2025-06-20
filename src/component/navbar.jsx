@@ -54,7 +54,7 @@ function MyNavbar() {
                            />
                           </Form>
                        <div className="d-flex ">
-              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative mt-xs-5">
+              <Nav.Link as={NavLink} to="/cartpage" className="me-3 position-relative">
   <FaShoppingBag size={24}style={{color:'#ffffff'}} />
   {cartItems.length > 0 && (
     <span
