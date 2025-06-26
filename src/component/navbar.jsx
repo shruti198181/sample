@@ -4,9 +4,9 @@ import { Link ,NavLink} from 'react-router-dom';
 import { FaShoppingBag} from 'react-icons/fa';
 import {FaUser } from 'react-icons/fa';
 import { useSelector,useDispatch } from 'react-redux';
-import { setSearchTerm } from './searchslice'; 
-
-function MyNavbar() {
+import { setSearchTerm } from './searchslice';
+import MyOrder from '../pages/myorder'; 
+ function MyNavbar() {
     const cartItems = useSelector((state) => state.cart.cartItems);
       const dispatch = useDispatch();
 
@@ -68,6 +68,7 @@ function MyNavbar() {
           </span>
         )}
       </Nav.Link>
+       <Nav.Link as={NavLink} to="/myorder" className="text-white border border-primary w-50 ps-3 rounded-2">My Order</Nav.Link> 
       <Button variant="outline-primary" as={NavLink} to="/login" style={{ color: '#ffffff' }}>
         <FaUser className="me-1" style={{ color: '#ffffff' }} /> Login
       </Button>
